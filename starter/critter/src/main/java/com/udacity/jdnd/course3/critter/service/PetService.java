@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,11 +20,16 @@ public class PetService {
 
     @Autowired
     CustomerRepository customerRepository;
+
+
     public Pet save(Pet pet, long id){
         Customer customer = customerRepository.getOne(id);
         pet.setCustomer(customer);
         Pet p = petRepository.save(pet);
-
+        Customer c = p.getCustomer();
+        List pets = new ArrayList();
+        pets.add(p);
+        c.setPetIds(pets);
         return  p;
     }
 

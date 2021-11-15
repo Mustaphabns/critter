@@ -11,6 +11,8 @@ import java.util.List;
 @Service
 @Transactional
 public class CustomerService {
+
+
     @Autowired
     CustomerRepository customerRepository;
 
@@ -24,5 +26,8 @@ public class CustomerService {
 
     public Customer getCustomerByPetId(long id){
         return  customerRepository.findCustomerByPet(id);
+    }
+    public Customer save(Customer customer){
+        return customerRepository.save(customer);
     }
 }

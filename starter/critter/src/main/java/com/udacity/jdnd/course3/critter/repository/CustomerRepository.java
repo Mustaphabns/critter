@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
-    @Query("from Customer c join c.pets p" +
+    @Query("from Customer c join c.petIds p" +
             " where p.customer.id = :id")
     Customer findCustomerByPet(@Param("id") long id);
 }
