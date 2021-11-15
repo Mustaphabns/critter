@@ -1,4 +1,6 @@
-package com.udacity.jdnd.course3.critter.user;
+package com.udacity.jdnd.course3.critter.dataDTO;
+
+import com.udacity.jdnd.course3.critter.entities.EmployeeSkill;
 
 import java.time.DayOfWeek;
 import java.util.Set;
